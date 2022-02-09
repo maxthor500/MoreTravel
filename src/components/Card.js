@@ -1,19 +1,24 @@
 import React from "react";
-import katie from "../images/katie-zaferes.png";
+import data from "../data";
 
-export default function Card() {
-    return (
-        <div className="card">
-            <img src={katie} alt="katie zaferes" className="card-img" />
+
+export default function Card(props) {
+    const experiences = props.data;
+    console.log(data)
+    const listExperiences = experiences.map( experience => 
+        <div className="card" id={experience.id}>
+            <img src={`../images/${experience.coverImg}`} alt={experience.coverImg} className="card-img" />
             <div className="card-content">
                 <small>
                 <i class="fas fa-star"></i>
-                5.0 
-                <span className="grey">(6) - USA</span>
+                {experience.stats.rating}
+                <span className="grey">({experience.stats.reviewCount}) - {experience.location}</span>
                 </small>
-                <p>Life lessons with Katie Zaferes</p>
-                <p><strong>From $136</strong> / person</p>
+                <p>{experience.title}</p>
+                <p><strong>From ${experience.price}</strong> / person</p>
             </div>
-        </div>
+        </div> )
+    return (
+        listExperiences
     )
 }
