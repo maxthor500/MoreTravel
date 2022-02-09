@@ -8,21 +8,29 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 #navbar {
   position: fixed;
   top: 0;
   width: 100%;
+  height: 4rem;
+  box-shadow: 0em .3em .5em rgba(0, 0, 0, 0.1);
 }
 
 .nav-logo {
   width: 4.5rem;
-  padding: .8rem;
+  padding: .7rem;
 }
 
 .container-main {
   display: flex;
   flex-direction: column;
-  margin-top: 4rem;
+  margin-top: 5rem;
   align-items: center;
 }
 
@@ -40,4 +48,24 @@ body {
 .main-text {
   width: 20rem;
   padding: 0 1rem;
+}
+
+.card {
+  font-size: .8rem;
+  width: 11rem;
+  padding: 1rem;
+  margin-top: 2rem;
+}
+
+.card-img {
+  width: 11rem;
+  border-radius: .5rem;
+}
+
+.fa-star {
+  color: red;
+}
+
+.grey {
+  color: #E5E5E5;
 }
