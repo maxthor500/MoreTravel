@@ -1,12 +1,12 @@
 import React from "react";
-import data from "../data";
 
 
 export default function Card(props) {
     const experiences = props.data;
-    console.log(data)
+        
     const listExperiences = experiences.map( experience => 
-        <div className="card" id={experience.id}>
+        <div className="card" key={experience.id}>
+            {experience.openSpots ? <div className="card-badge">ONLINE</div> : <div className="card-badge">SOLD OUT</div>}
             <img src={`../images/${experience.coverImg}`} alt={experience.coverImg} className="card-img" />
             <div className="card-content">
                 <small>
